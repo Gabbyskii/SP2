@@ -11,7 +11,6 @@ public class AudioBook extends Title {
     @Override
     public double calculatePoints() {
         //formel fra eks: (varighed i minutter × 0.5) × litteraturtype × eksemplarer
-        //(192 × 0.5) × 1.7 × 140 = 22848 point
         double litType = convertLiteratureType();
         return (durationInMinutes * 0.5) * litType * copies;
     }
