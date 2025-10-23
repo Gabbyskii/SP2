@@ -2,7 +2,7 @@ public class AudioBook extends Title {
     protected int copies;
     protected int durationInMinutes;
 
-    public AudioBook(String title, String literatureType, int durationInMinutes, int copies) {
+    public AudioBook(String title, String literatureType, int copies, int durationInMinutes) {
         super(title, literatureType);
         this.copies = copies;
         this.durationInMinutes = durationInMinutes;
@@ -12,8 +12,8 @@ public class AudioBook extends Title {
     public double calculatePoints() {
         //formel fra eks: (varighed i minutter × 0.5) × litteraturtype × eksemplarer
         //(192 × 0.5) × 1.7 × 140 = 22848 point
-        double typeValue = convertLiteratureType();
-        return (durationInMinutes * 0.5) * typeValue * copies;
+        double litType = convertLiteratureType();
+        return (durationInMinutes * 0.5) * litType * copies;
     }
 
     @Override

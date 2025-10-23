@@ -7,11 +7,10 @@ public class Author {
 
    public Author(String name){
        this.name = name;
-
    }
 
    public void addTitle(Title title) {
-
+       titles.add(title);
    }
 
    public double calculateRoyalties(){
@@ -25,6 +24,5 @@ public class Author {
     public String getName(){
        return name;
    }
-
 
 }

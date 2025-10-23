@@ -11,9 +11,9 @@ public class PrintedBook extends Title {
     @Override
     public double calculatePoints() {
         //formel fra eks: Sider × litteraturtype × eksemplarer
-        //166 × 1.7 × 140 = 39508 point
-        double typeValue = convertLiteratureType();
-        return pages * typeValue * copies;
+        //dvs. 166 × 1.7 × 140 = 39508 point
+        double litType = convertLiteratureType();
+        return pages * litType * copies;
     }
 
     @Override
