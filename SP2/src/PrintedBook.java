@@ -1,8 +1,8 @@
-public class PrintedBook extends Title{
-    protected int pages;
+public class PrintedBook extends Title {
     protected int copies;
+    protected int pages;
 
-    public PrintedBook(String title, String literatureType, int copies, int pages){
+    public PrintedBook(String title, String literatureType, int copies, int pages) {
         super(title, literatureType);
         this.copies = copies;
         this.pages = pages;
@@ -10,11 +10,27 @@ public class PrintedBook extends Title{
 
     @Override
     public double calculatePoints() {
-        // Implementation baseret på copies og pages
+        //formel fra eks: Sider × litteraturtype × eksemplarer
+        //166 × 1.7 × 140 = 39508 point
+        double typeValue = convertLiteratureType();
+        return pages * typeValue * copies;
     }
 
     @Override
     public double convertLiteratureType() {
-        // Implementation baseret på literatureType
+        switch (literatureType) {
+            case "BI":
+            case "TE":
+                return 3;
+            case "LYRIK":
+                return 6;
+            case "SKØN":
+                return 1.7;
+            case "FAG":
+            default:
+                return 1;
+        }
     }
+
+
 }

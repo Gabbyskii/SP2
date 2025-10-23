@@ -4,14 +4,12 @@ public abstract class Title {
     protected static final double RATE = 0.067574;
 
     public Title(String title, String literatureType) {
-        // Initialiser de to attributter
         this.title = title;
         this.literatureType = literatureType;
-
     }
 
     public double calculateRoyalty() {
-        return calculatePoints() * RATE; //????
+        return calculatePoints() * RATE;
     }
 
     public abstract double calculatePoints();
